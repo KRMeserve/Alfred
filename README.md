@@ -1,0 +1,2 @@
+# Alfred
+Trade Bot
