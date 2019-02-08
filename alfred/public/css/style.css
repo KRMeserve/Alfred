@@ -1,0 +1,138 @@
+/* Colors */
+:root {
+    --steel: rgba(102, 66, 215, 0.19);
+    --light-blue: rgba(78, 170, 222, 0.72);
+    --off-white: rgba(245,255,245,1);
+}
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
+
+body {
+    font-family: 'Major Mono Display', monospace;
+}
+
+/* Styling */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--steel);
+    margin: 0;
+}
+
+img {
+    width: 250px;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    align-self: center;
+}
+.collision {
+    align-self: center;
+    text-decoration: none;
+    color: rgb(0,0,0);
+    height: 70px;
+    width: 200px;
+    line-height: 70px;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+.collision::before, .collision::after {
+    position: absolute;
+    content:'';
+    width: 20px;
+    height: 20px;
+    background: var(--light-blue);
+    top: 50%;
+    border-radius: 50%;
+    z-index: -1;
+}
+.collision::before {
+    transform: translate(-50%, -50%);
+    left: -20px;
+}
+.collision::after {
+    transform: translate(50%, -50%);
+    right: -20px;
+}
+.collision:hover::before {
+    animation: move-left .8s both;
+    animation direction: alternate;
+}
+.collision:hover::after {
+    animation: move-right .8s both;
+    animation direction: alternate;
+}
+
+.alfred:hover {
+    animation: wiggle .4s both;
+}
+
+/* Keyframes */
+
+@keyframes move-left {
+    0% {
+        left: -20px;
+    }
+    50% {
+        left: 50%;
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        left: 50%;
+        width: 400px;
+        height: 400px;
+    }
+}
+@keyframes move-right {
+    0% {
+        right: -20px;
+    }
+    50% {
+        right: 50%;
+        width: 20px;
+        height: 20px;
+    }
+    100% {
+        right: 50%;
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(2deg);
+    }
+    40% {
+        transform: rotate(-2deg);
+    }
+    80% {
+        transform: rotate(2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
