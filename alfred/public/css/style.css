@@ -35,11 +35,17 @@ img {
     height: 100vh;
 }
 
+.trading-page {
+  height: 100vh;
+}
+
 .title {
     font-size: 3em;
     margin-bottom: 50px;
     text-transform: uppercase;
+    text-align: center;
     align-self: center;
+    padding: 0 50px;
 }
 .collision {
     align-self: center;
