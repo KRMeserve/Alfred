@@ -23,7 +23,7 @@ class TradingPage extends React.Component {
       <div className="trading-page">
         <img
           src="./img/Monocle-Transparent-Image.png"
-          className="alfred"
+          className="alfred" alt="Alfr3d Logo"
           onClick={()=>{this.props.changePage('showLandingPage', 'showTradingPage');}}>
         </img>
         <h1 className="title">These are your saved cryptocurrencies.</h1>

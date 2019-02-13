@@ -1,6 +1,7 @@
 import React from 'react';
 import LandingPage from './LandingPage'
 import TradingPage from './TradingPage'
+import CreateAccount from './CreateAccount'
 
 class App extends React.Component {
   constructor(props){
@@ -9,6 +10,9 @@ class App extends React.Component {
     this.state = {
       showLandingPage: true,
       showTradingPage: false,
+      showCAPage: false,
+      userLoggedIn: false,
+      username: '',
     }
   }
   changePage = (page1, page2)=>{
@@ -29,6 +33,12 @@ class App extends React.Component {
             {this.state.showTradingPage
               ?
               <TradingPage changePage={this.changePage}></TradingPage>
+              :
+              ''
+            }
+            {this.state.showCAPage
+              ?
+              <CreateAccount changePage={this.changePage}></CreateAccount>
               :
               ''
             }
