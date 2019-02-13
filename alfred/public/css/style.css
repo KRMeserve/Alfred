@@ -87,10 +87,28 @@ img {
     animation: move-right .8s both;
     animation direction: alternate;
 }
-
+.alfred {
+  display: block;
+  margin: 0 auto;
+}
 .alfred:hover {
     animation: wiggle .4s both;
 }
+.stocks {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+}
+.stock {
+  width: 50%;
+}
+
+.instructions {
+  text-align: center;
+}
+
 
 /* Keyframes */
 
