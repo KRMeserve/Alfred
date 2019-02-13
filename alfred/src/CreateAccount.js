@@ -35,7 +35,7 @@ class CreateAccount extends React.Component {
         redirect: "follow",
         referrer: "no-referrer",
         body: JSON.stringify(data),
-      }).then(response => response.text());
+      }).then(response => response.json());
     }
     //Calling above function
     createAccount(fetchURL, {username: this.state.username, password: this.state.password})
