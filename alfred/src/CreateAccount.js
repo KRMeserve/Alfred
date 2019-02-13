@@ -5,12 +5,12 @@ class CreateAccount extends React.Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.submitForm = this.submitForm.bind(this);
-    // this.changePageAndSubmit = this.changePageAndSubmit.bind(this);
     this.state = {
       username: '',
       password: '',
     }
   }
+  //Takes user inputs in the form and updates the state with the input so it can be sent to the server once submitted.
   handleChange(event){
     console.log(event.target.value);
     this.setState({
@@ -42,11 +42,6 @@ class CreateAccount extends React.Component {
       .then(data => console.log(JSON.stringify(data)))
       .catch(error => console.log(error));
   }
-  //Built to allow submit of form to call two functions at once.
-  // changePageAndSubmit(){
-  //   this.submitForm(event);
-  //   this.props.changePage('showCAPage', 'showLandingPage');
-  // }
   render() {
     return (
       <div className="landing-page">

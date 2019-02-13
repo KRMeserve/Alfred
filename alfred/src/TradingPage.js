@@ -8,9 +8,11 @@ class TradingPage extends React.Component {
       cryptoToShow: [],
     }
   }
+  //Runs as soon as the component finishes loading
   componentDidMount(){
     this.getCrypto('btcusdt');
   }
+  //Query the server for information regarding whatever crypto symbol is requested in the argument.
   getCrypto(symbol) {
     fetch('https://alfr3d-db.herokuapp.com/' + symbol).then(response => response.json()).then(crypto =>{
       this.setState({
