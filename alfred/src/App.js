@@ -11,6 +11,8 @@ class App extends React.Component {
       showLandingPage: true,
       showTradingPage: false,
       showCAPage: false,
+      userLoggedIn: false,
+      username: '',
     }
   }
   changePage = (page1, page2)=>{
