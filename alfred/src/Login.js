@@ -21,16 +21,18 @@ class Login extends React.Component {
     //Stops page from reloading on submit.
     event.preventDefault();
     //Variable holding the FetchURL
-    const fetchURL = `https://alfr3d-db.herokuapp.com/users/new?username=${this.state.username}&password=${this.state.password}`;
+    const fetchURL = `https://alfr3d-db.herokuapp.com/users?username=${this.state.username}&password=${this.state.password}`;
     //Function that will send the POST request to the server.
-    const createAccount = (url = '' , data = {})=>{
+    const logInToAccount = (url = '' , data = {})=>{
+      console.log(fetchURL);
+      console.log(data);
       return fetch(url, {
         method: "POST",
         mode: "cors",
         cache: "no-cache",
         credentials: "same-origin",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
         },
         redirect: "follow",
         referrer: "no-referrer",
@@ -38,8 +40,11 @@ class Login extends React.Component {
       }).then(response => response.json());
     }
     //Calling above function
-    createAccount(fetchURL, {username: this.state.username, password: this.state.password})
-      .then(data => console.log(JSON.stringify(data)))
+    logInToAccount(fetchURL, {username: this.state.username, password: this.state.password})
+      .then(data => {
+        console.log(JSON.stringify(data));
+        this.props.logIn(this.state.username);
+      })
       .catch(error => console.log(error));
   }
   render() {
