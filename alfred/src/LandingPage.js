@@ -9,8 +9,11 @@ class LandingPage extends React.Component {
          <a className="collision" href="#" onClick={()=>{this.props.changePage('showLandingPage', 'showTradingPage');}}>
             Let's Trade
         </a>
-         <a className="collision" href="#" onClick={()=>{this.props.changePage('showLandingPage', 'showCAPage');}}>
+        <a className="collision" href="#" onClick={()=>{this.props.changePage('showLandingPage', 'showCAPage');}}>
             Create Account
+        </a>
+        <a className="collision" href="#" onClick={()=>{this.props.changePage('showLandingPage', 'showLoginPage');}}>
+            Log In
         </a>
       </div>
     );
