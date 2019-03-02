@@ -12,7 +12,6 @@ class Login extends React.Component {
   }
   //Takes user inputs in the form and updates the state with the input so it can be sent to the server once submitted.
   handleChange(event){
-    console.log(event.target.value);
     this.setState({
       [event.target.id]: event.target.value
     })
@@ -32,7 +31,7 @@ class Login extends React.Component {
         cache: "no-cache",
         credentials: "same-origin",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          "Content-Type": "application/json",
         },
         redirect: "follow",
         referrer: "no-referrer",
