@@ -26,7 +26,7 @@ class CreateAccount extends React.Component {
     const createAccount = (url = '' , data = {})=>{
       return fetch(url, {
         method: "POST",
-        mode: "cors",
+        mode: "no-cors",
         cache: "no-cache",
         credentials: "same-origin",
         headers: {

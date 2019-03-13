@@ -28,7 +28,7 @@ class Login extends React.Component {
       console.log(data);
       return fetch(url, {
         method: "POST",
-        mode: "cors",
+        mode: "no-cors",
         cache: "no-cache",
         credentials: "same-origin",
         headers: {
