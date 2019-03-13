@@ -20,7 +20,8 @@ class Login extends React.Component {
     //Stops page from reloading on submit.
     event.preventDefault();
     //Variable holding the FetchURL
-    const fetchURL = `https://alfr3d-db.herokuapp.com/users?username=${this.state.username}&password=${this.state.password}`;
+    // const fetchURL = `https://alfr3d-db.herokuapp.com/users?username=${this.state.username}&password=${this.state.password}`;
+    const fetchURL = `http://localhost:4000/users?username=${this.state.username}&password=${this.state.password}`;
     //Function that will send the POST request to the server.
     const logInToAccount = (url = '' , data = {})=>{
       console.log(fetchURL);
@@ -41,8 +42,15 @@ class Login extends React.Component {
     //Calling above function
     logInToAccount(fetchURL, {username: this.state.username, password: this.state.password})
       .then(data => {
-        console.log(JSON.stringify(data));
-        this.props.logIn(this.state.username);
+        let passwordResponse = JSON.stringify(data);
+        console.log(passwordResponse);
+        if (passwordResponse === "\"passwords match\"") {
+          console.log('password correct, state updated');
+          this.props.logIn(this.state.username);
+        } else {
+          console.log('username or password incorrect');
+        }
+
       })
       .catch(error => console.log(error));
   }
