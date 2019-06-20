@@ -59,7 +59,7 @@ class Login extends React.Component {
       <div className="landing-page">
         <img src="./img/Monocle-Transparent-Image.png" className="alfred" alt="Alfr3d Logo"></img>
         <h1 className="title">Log In</h1>
-        <form onSubmit={(event)=>{this.submitForm(event); this.props.changePage('showCAPage', 'showLandingPage')}}>
+        <form onSubmit={(event)=>{this.submitForm(event); this.props.changePage('showLoginPage', 'showLandingPage')}}>
           <label>Username:</label><br/>
           <input onChange={this.handleChange} id='username' type="text" value={this.state.username}></input><br/>
           <label>Password:</label><br/>
