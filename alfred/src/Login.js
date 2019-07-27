@@ -24,11 +24,8 @@ class Login extends React.Component {
     // const fetchURL = `http://localhost:4000/users?username=${this.state.username}&password=${this.state.password}`;
     //Function that will send the POST request to the server.
     const logInToAccount = (url = '' , data = {})=>{
-      console.log(fetchURL);
-      console.log(data);
       return fetch(url, {
         method: "POST",
-        mode: "no-cors",
         cache: "no-cache",
         credentials: "same-origin",
         headers: {
@@ -46,6 +43,7 @@ class Login extends React.Component {
         console.log(passwordResponse);
         if (passwordResponse === "\"passwords match\"") {
           console.log('password correct, state updated');
+          console.log(this.state.username, 'username state on login page')
           this.props.logIn(this.state.username);
         } else {
           console.log('username or password incorrect');
@@ -59,7 +57,7 @@ class Login extends React.Component {
       <div className="landing-page">
         <img src="./img/Monocle-Transparent-Image.png" className="alfred" alt="Alfr3d Logo"></img>
         <h1 className="title">Log In</h1>
-        <form onSubmit={(event)=>{this.submitForm(event); this.props.changePage('showCAPage', 'showLandingPage')}}>
+        <form onSubmit={(event)=>{this.submitForm(event); this.props.changePage('showLoginPage', 'showLandingPage')}}>
           <label>Username:</label><br/>
           <input onChange={this.handleChange} id='username' type="text" value={this.state.username}></input><br/>
           <label>Password:</label><br/>

@@ -22,11 +22,11 @@ class CreateAccount extends React.Component {
     event.preventDefault();
     //Variable holding the FetchURL
     const fetchURL = `https://alfr3d-db.herokuapp.com/users/new?username=${this.state.username}&password=${this.state.password}`;
+    // const fetchURL = `https://alfr3d-db.herokuapp.com/users/new?username=${this.state.username}&password=${this.state.password}`;
     //Function that will send the POST request to the server.
     const createAccount = (url = '' , data = {})=>{
       return fetch(url, {
         method: "POST",
-        mode: "no-cors",
         cache: "no-cache",
         credentials: "same-origin",
         headers: {

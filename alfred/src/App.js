@@ -22,6 +22,7 @@ class App extends React.Component {
     this.setState({
       username: username
     })
+    console.log(username);
   }
   //change page functionality to allow site to change views without pagination
   changePage = (page1, page2)=>{
@@ -35,13 +36,13 @@ class App extends React.Component {
         <div>
             {this.state.showLandingPage
               ?
-              <LandingPage changePage={this.changePage}></LandingPage>
+              <LandingPage changePage={this.changePage} username={this.state.username}></LandingPage>
               :
               ''
             }
             {this.state.showTradingPage
               ?
-              <TradingPage changePage={this.changePage}></TradingPage>
+              <TradingPage changePage={this.changePage} username={this.state.username}></TradingPage>
               :
               ''
             }
